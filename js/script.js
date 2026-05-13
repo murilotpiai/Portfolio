@@ -1,52 +1,62 @@
 const toggleBtn = document.getElementById("toggle-btn");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-function applyThemeButton(dark) {
+function applyThemeButton(isDark) {
   if (!toggleBtn) return;
-  toggleBtn.textContent = dark ? "☀️" : "🌙";
-  toggleBtn.setAttribute("aria-pressed", dark ? "true" : "false");
-}
-
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  const dark = document.body.classList.contains("dark-mode");
-  try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch {}
-  applyThemeButton(dark);
+  toggleBtn.textContent = isDark ? "Claro" : "Escuro";
+  toggleBtn.setAttribute("aria-pressed", String(isDark));
 }
 
 function loadTheme() {
-  let dark = false;
+  let isDark = false;
+
   try {
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    dark = saved ? saved === "dark" : !!prefersDark;
-  } catch {}
-  if (dark) document.body.classList.add("dark-mode");
-  applyThemeButton(dark);
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    isDark = savedTheme ? savedTheme === "dark" : Boolean(prefersDark);
+  } catch {
+    isDark = false;
+  }
+
+  document.body.classList.toggle("dark-mode", isDark);
+  applyThemeButton(isDark);
 }
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", toggleDarkMode);
-}
-loadTheme();
+function toggleTheme() {
+  const isDark = !document.body.classList.contains("dark-mode");
+  document.body.classList.toggle("dark-mode", isDark);
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks   = document.getElementById("nav-links");
+  try {
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  } catch {
+    // Theme preference is optional.
+  }
+
+  applyThemeButton(isDark);
+}
 
 function setMenu(open) {
   if (!menuToggle || !navLinks) return;
   menuToggle.setAttribute("aria-expanded", String(open));
-  navLinks.setAttribute("aria-hidden", open ? "false" : "true");
+  navLinks.setAttribute("aria-hidden", String(!open));
+}
+
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", toggleTheme);
 }
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    setMenu(!expanded);
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    setMenu(!isOpen);
   });
 
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       if (window.innerWidth <= 860) setMenu(false);
     });
   });
 }
+
+loadTheme();
