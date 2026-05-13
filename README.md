@@ -1,6 +1,6 @@
 # Portfolio - Murilo Turcato Piai
 
-Portfolio profissional para apresentar projetos, habilidades e experiencia de Murilo Turcato Piai, estudante de Sistemas de Informacao na UNIFAFIBE em busca de estagio em TI.
+Portfolio profissional para apresentar projetos, habilidades e experiência de Murilo Turcato Piai, estudante de Sistemas de Informação na UNIFAFIBE em busca de estágio em TI.
 
 - Deploy: https://portfolio-three-tau-54.vercel.app
 - LinkedIn: https://www.linkedin.com/in/mtpiai
@@ -8,7 +8,7 @@ Portfolio profissional para apresentar projetos, habilidades e experiencia de Mu
 
 ## Objetivo do projeto
 
-Centralizar informacoes profissionais, contatos e projetos principais em uma pagina simples, responsiva e alinhada ao LinkedIn.
+Centralizar informações profissionais, contatos e projetos principais em uma página simples, responsiva e alinhada ao LinkedIn.
 
 ## Tecnologias utilizadas
 
@@ -18,48 +18,48 @@ Centralizar informacoes profissionais, contatos e projetos principais em uma pag
 - Responsividade
 - Tema claro/escuro com LocalStorage
 
-## Secoes
+## Seções
 
 - Sobre
 - Habilidades
 - Projetos
-- Experiencia
+- Experiência
 - Contato
 
 ## Projetos em destaque
 
 - Helpdesk Interno: API REST para chamados internos de TI com Python, FastAPI e SQLAlchemy.
-- Controle Financeiro: aplicacao web estatica para registrar receitas/despesas, filtrar dados, visualizar graficos e exportar informacoes.
-- Portfolio Profissional: pagina pessoal para conectar GitHub, LinkedIn e projetos.
+- Fincoob - Gestão Financeira: aplicação web estática para registrar receitas e despesas, filtrar dados, visualizar gráficos e exportar informações.
+- Portfolio Profissional: página pessoal para conectar GitHub, LinkedIn e projetos.
 
 ## Como executar
 
-Clone o repositorio e abra o arquivo `index.html` no navegador.
+Clone o repositório e abra o arquivo `index.html` no navegador.
 
 ```bash
 git clone https://github.com/murilotpiai/Portfolio.git
 cd Portfolio
 ```
 
-Nao ha etapa de build.
+Não há etapa de build.
 
 ## Aprendizados
 
-- Estruturacao de uma pagina profissional
-- Organizacao de conteudo para recrutadores
-- Criacao de layout responsivo
-- Boas praticas de HTML semantico
+- Estruturação de uma página profissional
+- Organização de conteúdo para recrutadores
+- Criação de layout responsivo
+- Boas práticas de HTML semântico
 - Controle de tema com JavaScript e LocalStorage
 
 ## Melhorias futuras
 
-- Adicionar curriculo em PDF atualizado
+- Adicionar currículo em PDF atualizado
 - Incluir prints dos principais projetos
-- Criar versao com React ou outro framework frontend
-- Adicionar metricas simples de acessibilidade e performance
+- Criar versão com React ou outro framework frontend
+- Adicionar métricas simples de acessibilidade e performance
 
 ## Autor
 
 Murilo Turcato Piai
 
-Estudante de Sistemas de Informacao na UNIFAFIBE, com interesse em desenvolvimento web, analise de dados, Power BI, Python, JavaScript, banco de dados, Docker, SAP/SCPI, ERP e processos administrativos.
+Estudante de Sistemas de Informação na UNIFAFIBE, com interesse em desenvolvimento web, análise de dados, Power BI, Python, JavaScript, banco de dados, Docker, SAP/SCPI, ERP e processos administrativos.
